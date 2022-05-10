@@ -128,3 +128,28 @@ label {
     border: 2px solid #ff9030;
 	transition: background ease-in-out .5s;
 }
+
+#slide1:checked ~ .slider .slide:nth-child(1),
+#slide2:checked ~ .slider .slide:nth-child(2),
+#slide3:checked ~ .slider .slide:nth-child(3),
+#slide4:checked ~ .slider .slide:nth-child(4) {
+    max-width: inherit;
+    visibility: visible;
+    opacity: 1;
+}
+#slide1:checked ~ .slider p:nth-child(1),
+#slide2:checked ~ .slider p:nth-child(2),
+#slide3:checked ~ .slider p:nth-child(3),
+#slide4:checked ~ .slider p:nth-child(4) {
+    max-height: inherit;
+    visibility: visible;
+    opacity: 1;
+}
+label:hover,
+#slide1:checked ~ .slider label:nth-of-type(1),
+#slide2:checked ~ .slider label:nth-of-type(2),
+#slide3:checked ~ .slider label:nth-of-type(3),
+#slide4:checked ~ .slider label:nth-of-type(4),
+#slide5:checked ~ .slider label:nth-of-type(5) {
+	background: #ff9030;
+}
