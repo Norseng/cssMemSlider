@@ -5,7 +5,8 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 html {
     overflow-x: hidden;
@@ -18,13 +19,20 @@ html {
 body {
     background-image: url(https://norseng.github.io/virtual-keyboard/5409bbd28d4bf608b478.jpg);
     height: 100vh;
-    backdrop-filter: sepia(1);
+    -webkit-backdrop-filter: sepia(1);
+            backdrop-filter: sepia(1);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     overflow-x: hidden;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
-    font-variant-ligatures: no-common-ligatures;
+    -webkit-font-variant-ligatures: no-common-ligatures;
+            font-variant-ligatures: no-common-ligatures;
     font-style: normal;
     font-weight: bold;
     line-height: 160%;
@@ -36,13 +44,18 @@ body {
     color: #ff9030;
 }
 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 0 auto;
     position: relative;
     padding: 0 20px;
     width: 100%;
-    max-width: 800px;
+    max-width: 750px;
 }
 h1 {
     text-align: center;
@@ -58,98 +71,172 @@ h1 {
     top: 10px;
 }
 .gitlogo a {
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
     transition: 0.3s ease;
     fill: #7f8fa6;
 }
 .gitlogo a:hover {
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
     transition: 0.3s ease;
     cursor: pointer;
     fill: #ff9030;
 }
 .wrapper {
     width: 100%;
-    margin: 20px auto 0;
+    margin: 20px auto;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 input {
 	display: none;
 }
 .slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .slide {
-    flex: 0 0 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
 	max-width: 0;
     visibility: hidden;
     opacity: 0;
-	transition: ease-in-out .5s;
-    display: flex;
+	-webkit-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
     border-radius: 20px;
-    flex-wrap: wrap;
 }
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 0 20px #7f8fa6;
+    -webkit-box-shadow: 0 0 20px #7f8fa6;
+            box-shadow: 0 0 20px #7f8fa6;
 }
 .descriptions p {
     margin: 0;
     opacity: 0;
+    max-width: 0;
     max-height: 0;
     visibility: hidden;
     font-size: 20px;
+    -webkit-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
 }
-
-.controls {
-    margin-right: -10px;
+.descriptions {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    height: fit-content;
+    overflow: hidden;
+}
+.controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .slider__bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 20px;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    
 }
 label {
 	cursor: pointer;
-    height: 20px;
-    margin-right: 10px;
+    height: 30px;
     position: relative;
+    width: 30px;
+}
+label::before {
+    height: 20px;
+    content: '';
+    position: absolute;
     width: 20px;
 	border-radius: 50%;
-    border: 2px solid #ff9030;
-	transition: background ease-in-out .5s;
+    border: 2px solid #7f8fa6;
+    background-color: transparent;
+    bottom: 50%;
+    right: 50%;
+    -webkit-transform: translate(50%,50%);
+        -ms-transform: translate(50%,50%);
+            transform: translate(50%,50%);
+	-webkit-transition: .5s ease-in-out ;
+	-o-transition: .5s ease-in-out ;
+	transition: .5s ease-in-out ;
 }
 
 #slide1:checked ~ .slider .slide:nth-child(1),
 #slide2:checked ~ .slider .slide:nth-child(2),
 #slide3:checked ~ .slider .slide:nth-child(3),
-#slide4:checked ~ .slider .slide:nth-child(4) {
-    max-width: inherit;
-    visibility: visible;
-    opacity: 1;
-}
+#slide4:checked ~ .slider .slide:nth-child(4),
 #slide1:checked ~ .slider p:nth-child(1),
 #slide2:checked ~ .slider p:nth-child(2),
 #slide3:checked ~ .slider p:nth-child(3),
 #slide4:checked ~ .slider p:nth-child(4) {
-    max-height: inherit;
+    max-width: inherit;
     visibility: visible;
     opacity: 1;
+    max-height: inherit;
 }
-label:hover,
-#slide1:checked ~ .slider label:nth-of-type(1),
-#slide2:checked ~ .slider label:nth-of-type(2),
-#slide3:checked ~ .slider label:nth-of-type(3),
-#slide4:checked ~ .slider label:nth-of-type(4),
-#slide5:checked ~ .slider label:nth-of-type(5) {
+label:hover::before {
+    background-color: #7f8fa6;
+}
+label:active::before {
+    background-color: #ff9030;
+    border-color: #ff9030;
+}
+#slide1:checked ~ .slider label:nth-of-type(1)::before,
+#slide2:checked ~ .slider label:nth-of-type(2)::before,
+#slide3:checked ~ .slider label:nth-of-type(3)::before,
+#slide4:checked ~ .slider label:nth-of-type(4)::before,
+#slide5:checked ~ .slider label:nth-of-type(5)::before {
 	background: #ff9030;
+    border-color: #ff9030;
+}
+
+@media screen and (max-width: 575px) {
+    .gitlogo {
+        width: 40px;
+        height: 40px;
+    }
+    .slider__bottom {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+    }
+    .controls {
+        margin-bottom: 10px;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+    }
 }
