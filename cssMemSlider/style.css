@@ -53,22 +53,22 @@ body {
             flex-direction: column;
     margin: 0 auto;
     position: relative;
-    padding: 0 20px;
+    padding: 0 1.25rem;
     width: 100%;
-    max-width: 750px;
+    max-width: 46.875rem;
 }
 h1 {
     text-align: center;
     font-weight: bold;
     color: #ff9030;
-    margin: 30px;
+    margin: 1.875rem;
 }
 .gitlogo {
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     position: fixed;
-    left: 10px;
-    top: 10px;
+    left: 0.625rem;
+    top: 0.625rem;
 }
 .gitlogo a {
     -webkit-transition: 0.3s ease;
@@ -85,7 +85,7 @@ h1 {
 }
 .wrapper {
     width: 100%;
-    margin: 20px auto;
+    margin: 1.25rem auto;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -116,16 +116,16 @@ input {
 	-webkit-transition: .5s ease-in-out;
 	-o-transition: .5s ease-in-out;
 	transition: .5s ease-in-out;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 .slide img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    border-radius: 20px;
-    -webkit-box-shadow: 0 0 20px #7f8fa6;
-            box-shadow: 0 0 20px #7f8fa6;
+    border-radius: 1.25rem;
+    -webkit-box-shadow: 0 0 1.25rem #7f8fa6;
+            box-shadow: 0 0 1.25rem #7f8fa6;
 }
 .descriptions p {
     margin: 0;
@@ -156,7 +156,7 @@ input {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -178,7 +178,7 @@ label span {
     height: 1.25rem;
     width: 1.25rem;
 	border-radius: 50%;
-    border: 2px solid #7f8fa6;
+    border: 0.125rem solid #7f8fa6;
     background-color: transparent;
 	-webkit-transition: .5s ease-in-out ;
 	-o-transition: .5s ease-in-out ;
@@ -216,8 +216,8 @@ label:active span {
 
 @media screen and (max-width: 575px) {
     .gitlogo {
-        width: 40px;
-        height: 40px;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     .slider__bottom {
         -webkit-box-orient: vertical;
@@ -229,7 +229,7 @@ label:active span {
                 align-items: flex-start;
     }
     .controls {
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
         -ms-flex-item-align: center;
             -ms-grid-row-align: center;
             align-self: center;
